@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="xyz.abhaychauhan.www.udacityunofficialclient.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/udacity_welcome_screen_dimension"
+            android:layout_height="@dimen/udacity_welcome_screen_dimension"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_top_main"
+            android:src="@drawable/udacity_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/title_padding"
+            android:text="@string/welcome_text"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_course"
+            android:orientation="horizontal"
+            android:padding="@dimen/title_padding">
+
+            <LinearLayout
+                android:id="@+id/course_free"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/title_padding"
+                    android:src="@drawable/icon_course" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/course"
+                    android:textSize="@dimen/course_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/course_nanodegree"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/title_padding"
+                    android:src="@drawable/icon_nanodegree_new" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nanodegrees"
+                    android:textSize="@dimen/course_text_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/course_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/title_padding"
+                android:src="@drawable/icon_course" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tracks"
+                android:textSize="@dimen/course_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

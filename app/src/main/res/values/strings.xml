@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Udacity Unofficial Client</string>
+
+    <!-- activity_main.xml -->
+    <string name="welcome_text">Welcome to \nUdacity Unofficial Client</string>
+    <string name="course">Free Courses</string>
+    <string name="nanodegrees">Nanodegree</string>
+    <string name="tracks">Tracks</string>
+</resources>
