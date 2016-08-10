@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="circle_default_color">#2E7D32</color>
+
+    <color name="color_beginner">#2E7D32</color>
+    <color name="color_intermediate">#0091EA</color>
+    <color name="color_advanced">#DD2C00</color>
+    <color name="color_default">#7B1FA2</color>
 </resources>

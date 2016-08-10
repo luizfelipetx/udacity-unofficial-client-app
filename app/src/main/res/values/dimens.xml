@@ -8,4 +8,9 @@
     <dimen name="margin_top_course">20dp</dimen>
     <dimen name="course_text_size">18sp</dimen>
     <dimen name="margin_top_main">60dp</dimen>
+
+    <dimen name="list_item_padding_lr">10dp</dimen>
+    <dimen name="list_item_padding_tb">6dp</dimen>
+    <dimen name="free_course_title_size">20dp</dimen>
+    <dimen name="free_course_gap">10dp</dimen>
 </resources>

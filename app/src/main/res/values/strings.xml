@@ -6,4 +6,8 @@
     <string name="course">Free Courses</string>
     <string name="nanodegrees">Nanodegree</string>
     <string name="tracks">Tracks</string>
+
+    <!-- free_course_list_item.xml -->
+    <string name="free_course_title">Intro to Progressive Web Apps</string>
+    <string name="free_course_short_summary">In this course you’ll get started working on your very first Progressive Web App - a web app that can take advantage of many features native applications have enjoyed!</string>
 </resources>

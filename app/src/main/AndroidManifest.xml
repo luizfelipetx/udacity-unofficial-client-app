@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xyz.abhaychauhan.www.udacityunofficialclient">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FreeCourseActivity"
+            android:label="Free Course catalog"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NanodegreeActivity"
+            android:label="Nanodegree"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TracksActivity"
+            android:label="Course Tracks"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".FreeCourseDetailActivity"></activity>
     </application>
 
 </manifest>

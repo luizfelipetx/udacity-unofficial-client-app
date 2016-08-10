@@ -14,6 +14,7 @@ public class Course {
     private String mSyllabus;
     private String mSummary;
     private String mExpectedLearning;
+    private String mShortSummary;
 
     /**
      * Construct {@link Course}
@@ -29,9 +30,10 @@ public class Course {
      * @param syllabus
      * @param summary
      * @param expectedLearning
+     * @param shortSummary
      */
     public Course(String title, String subTitle, String key, String imageUrl, String homePageUrl, String level,
-                  String expectedDurationUnit, int expectedDuration, String syllabus, String summary, String expectedLearning) {
+                  String expectedDurationUnit, int expectedDuration, String syllabus, String summary, String expectedLearning, String shortSummary) {
 
         mTitle = title;
         mSubTitle = subTitle;
@@ -44,6 +46,7 @@ public class Course {
         mSyllabus = syllabus;
         mSummary = summary;
         mExpectedLearning = expectedLearning;
+        mShortSummary = shortSummary;
     }
 
     /**
@@ -145,5 +148,13 @@ public class Course {
         return mExpectedLearning;
     }
 
+    /**
+     * Return short summary of course
+     *
+     * @return
+     */
+    public String getShortSummary() {
+        return mShortSummary;
+    }
 
 }
