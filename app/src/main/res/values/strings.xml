@@ -10,4 +10,16 @@
     <!-- free_course_list_item.xml -->
     <string name="free_course_title">Intro to Progressive Web Apps</string>
     <string name="free_course_short_summary">In this course you’ll get started working on your very first Progressive Web App - a web app that can take advantage of many features native applications have enjoyed!</string>
+    <string name="free_course_subtitle">Web Apps for the Next Billion Users</string>
+
+    <string name="no_network">No internet connection !!!</string>
+
+    <string name="no_data_found">No data found !!!</string>
+    <string name="course_summary">Course Summary - </string>
+    <string name="expected_learning">This content is important because the next frontier for developers is creating web applications that can reach places native apps cannot. This course covers the requirements for and construction of Progressive Web Applications – web sites that can install and operate applications on a mobile device just as if they were native applications.</string>
+    <string name="expected_learning_title">Why Take This Course?</string>
+    <string name="course_syllabus">Syllabus -</string>
+    <string name="button_view_course">View Course</string>
+    <string name="course_details">Course Details</string>
+
 </resources>

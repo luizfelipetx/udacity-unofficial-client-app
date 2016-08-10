@@ -1,7 +1,8 @@
 package xyz.abhaychauhan.www.udacityunofficialclient;
+import java.io.Serializable;
 
-
-public class Course {
+@SuppressWarnings("serial")         //With this notation we are going to hide compiler warning.
+public class Course implements Serializable {
 
     private String mTitle;
     private String mSubTitle;

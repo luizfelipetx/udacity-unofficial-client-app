@@ -11,6 +11,15 @@
 
     <dimen name="list_item_padding_lr">10dp</dimen>
     <dimen name="list_item_padding_tb">6dp</dimen>
-    <dimen name="free_course_title_size">20dp</dimen>
+    <dimen name="free_course_title_size">20sp</dimen>
     <dimen name="free_course_gap">10dp</dimen>
+
+    <dimen name="no_network_image_dimen">200dp</dimen>
+    <dimen name="no_network_text_size">20sp</dimen>
+
+    <dimen name="level_width">120dp</dimen>
+    <dimen name="level_height">26dp</dimen>
+
+    <dimen name="course_image_height">200dp</dimen>
+    <dimen name="list_item_margin_tb">10dp</dimen>
 </resources>
