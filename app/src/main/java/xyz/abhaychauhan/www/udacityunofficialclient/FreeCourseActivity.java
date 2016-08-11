@@ -52,7 +52,7 @@ public class FreeCourseActivity extends AppCompatActivity {
                 listView.setAdapter(adapter);
             }
         });
-        freeCourseAsyncTask.execute(COURSE_URL);
+        freeCourseAsyncTask.execute(COURSE_URL,"freecourse");
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

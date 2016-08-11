@@ -13,11 +13,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
-import java.net.URI;
-
-public class FreeCourseDetailActivity extends AppCompatActivity {
+public class NanodegreeDetailActivity extends AppCompatActivity {
 
     ImageView courseImageView;
     TextView titleView;
@@ -33,25 +29,28 @@ public class FreeCourseDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_free_course_detail);
+        setContentView(R.layout.activity_nanodegree_detail);
+
         Intent i = getIntent();
         final Course currentCourse = (Course) i.getSerializableExtra("courseObject");
 
-        courseImageView = (ImageView) findViewById(R.id.free_course_image);
-        titleView = (TextView) findViewById(R.id.free_course_title);
-        subTitleView = (TextView) findViewById(R.id.free_course_subtitle);
-        durationView = (TextView) findViewById(R.id.free_course_duration);
-        levelView = (TextView) findViewById(R.id.free_course_level);
-        summaryView = (TextView) findViewById(R.id.free_course_summary);
-        expectedLearningView = (TextView) findViewById(R.id.free_course_expected_learning);
-        syllabusView = (TextView) findViewById(R.id.free_course_syllabus);
+        courseImageView = (ImageView) findViewById(R.id.nanodegree_image);
+        titleView = (TextView) findViewById(R.id.nanodegree_title);
+        subTitleView = (TextView) findViewById(R.id.nanodegree_subtitle);
+        durationView = (TextView) findViewById(R.id.nanodegree_duration);
+        levelView = (TextView) findViewById(R.id.nanodegree_level);
+        summaryView = (TextView) findViewById(R.id.nanodegree_summary);
+        expectedLearningView = (TextView) findViewById(R.id.nanodegree_expected_learning);
+        syllabusView = (TextView) findViewById(R.id.nanodegree_syllabus);
         buttonView = (Button) findViewById(R.id.button_view_course);
 
-        if (currentCourse.getImageUrl() != null) {
-            try {
+        if (currentCourse.getImageUrl() != null && currentCourse.getImageUrl() != "" && !currentCourse.getImageUrl().contains(" ") ) {
+            try{
                 Picasso.with(this).load(currentCourse.getImageUrl()).into(courseImageView);
                 courseImageView.setVisibility(View.VISIBLE);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 courseImageView.setVisibility(View.GONE);
             }
         } else {
@@ -94,6 +93,7 @@ public class FreeCourseDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     /**
@@ -120,5 +120,6 @@ public class FreeCourseDetailActivity extends AppCompatActivity {
         }
         return ContextCompat.getColor(this, levelColorResourceId);
     }
+
 
 }

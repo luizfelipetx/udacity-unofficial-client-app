@@ -15,7 +15,7 @@ public class FreeCourseAsyncTask extends AsyncTask<String, Void, ArrayList<Cours
     @Override
     protected ArrayList<Course> doInBackground(String... strings) {
         if (strings[0] != null || strings[0] != "") {
-            return ExtractData.extractCourses(strings[0]);
+            return ExtractData.extractCourses(strings[0],strings[1]);
         }
         return null;
     }

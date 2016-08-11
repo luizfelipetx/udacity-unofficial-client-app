@@ -24,7 +24,7 @@ public class ExtractData {
      * @param stringUrl
      * @return
      */
-    public static ArrayList<Course> extractCourses(String stringUrl) {
+    public static ArrayList<Course> extractCourses(String stringUrl, String courseType) {
         URL url = createUrl(stringUrl);
         String jsonResponse = "";
         try {
@@ -32,7 +32,7 @@ public class ExtractData {
         } catch (IOException e) {
             Log.e("ExtractData.java", "Error -> Not able to fetch JSON RESPONSE !!!");
         }
-        ArrayList<Course> courses = extractCourseData(jsonResponse);
+        ArrayList<Course> courses = extractCourseData(jsonResponse, courseType);
         return courses;
     }
 
@@ -119,11 +119,17 @@ public class ExtractData {
      * @param jsonResponse
      * @return
      */
-    public static ArrayList<Course> extractCourseData(String jsonResponse) {
+    public static ArrayList<Course> extractCourseData(String jsonResponse, String courseType) {
         ArrayList<Course> course = new ArrayList<>();
         try {
             JSONObject object = new JSONObject(jsonResponse);
-            JSONArray coursesArray = object.getJSONArray("courses");
+            JSONArray coursesArray;
+            if (courseType == "freecourse") {
+                coursesArray = object.getJSONArray("courses");
+            } else {
+                coursesArray = object.getJSONArray("degrees");
+            }
+
             for (int i = 0; i < coursesArray.length(); i++) {
                 JSONObject courseObject = coursesArray.getJSONObject(i);
                 String subtitle = courseObject.optString("subtitle");
