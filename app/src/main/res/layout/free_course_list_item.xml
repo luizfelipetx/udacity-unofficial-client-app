@@ -11,6 +11,13 @@
     android:paddingStart="@dimen/list_item_padding_lr"
     android:paddingTop="@dimen/list_item_padding_tb">
 
+    <ImageView
+        android:id="@+id/free_course_image"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:layout_height="@dimen/course_image_height" />
+
     <TextView
         android:id="@+id/free_course_title"
         android:layout_width="wrap_content"

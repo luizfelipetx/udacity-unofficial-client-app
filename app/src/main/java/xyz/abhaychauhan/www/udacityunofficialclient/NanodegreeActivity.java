@@ -27,7 +27,7 @@ public class NanodegreeActivity extends AppCompatActivity {
         //Inilializing
         listView = (ListView) findViewById(R.id.list_nanodegree);
         mNanodegree = new ArrayList<>();
-        adapter = new FreeCourseAdapter(this, mNanodegree);
+        adapter = new FreeCourseAdapter(this, mNanodegree, "nanodegree");
         loading_screen = (LinearLayout) findViewById(R.id.loading_screen);
         no_data = (LinearLayout) findViewById(R.id.no_data);
 

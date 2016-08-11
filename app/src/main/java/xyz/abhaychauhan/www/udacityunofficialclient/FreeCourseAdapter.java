@@ -4,18 +4,29 @@ package xyz.abhaychauhan.www.udacityunofficialclient;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class FreeCourseAdapter extends ArrayAdapter<Course> {
 
+    private String mCourseType;
+
     public FreeCourseAdapter(Context context, ArrayList<Course> courses) {
         super(context, 0, courses);
+    }
+
+    public FreeCourseAdapter(Context context, ArrayList<Course> courses, String courseType) {
+        super(context, 0, courses);
+        mCourseType = courseType;
     }
 
     @Override
@@ -25,6 +36,18 @@ public class FreeCourseAdapter extends ArrayAdapter<Course> {
         }
 
         Course currentCourse = getItem(position);
+
+        if (mCourseType == "nanodegree") {
+            if (currentCourse.getImageUrl() != null && currentCourse.getImageUrl() != "") {
+                try {
+                    ImageView imageView = (ImageView) convertView.findViewById(R.id.free_course_image);
+                    Picasso.with(getContext()).load(currentCourse.getImageUrl()).into(imageView);
+                    imageView.setVisibility(View.VISIBLE);
+                } catch (Exception e) {
+                    Log.e("FreeCourseAdapter.java", "Error -> In setting ImageView !!!");
+                }
+            }
+        }
 
         //title
         TextView titleView = (TextView) convertView.findViewById(R.id.free_course_title);
