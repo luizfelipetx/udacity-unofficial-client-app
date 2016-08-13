@@ -37,7 +37,8 @@
         <activity
             android:name=".NanodegreeDetailActivity"
             android:label="Nanodegree Details"
-            android:parentActivityName=".NanodegreeActivity"></activity>
+            android:parentActivityName=".NanodegreeActivity" />
+        <activity android:name=".TracksDetailsActivity"></activity>
     </application>
 
 </manifest>

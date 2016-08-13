@@ -22,6 +22,7 @@ public class FreeCourseDetailActivity extends AppCompatActivity {
     ImageView courseImageView;
     TextView titleView;
     TextView subTitleView;
+    TextView idView;
     TextView durationView;
     TextView levelView;
     TextView summaryView;
@@ -40,6 +41,7 @@ public class FreeCourseDetailActivity extends AppCompatActivity {
         courseImageView = (ImageView) findViewById(R.id.free_course_image);
         titleView = (TextView) findViewById(R.id.free_course_title);
         subTitleView = (TextView) findViewById(R.id.free_course_subtitle);
+        idView = (TextView) findViewById(R.id.free_course_id);
         durationView = (TextView) findViewById(R.id.free_course_duration);
         levelView = (TextView) findViewById(R.id.free_course_level);
         summaryView = (TextView) findViewById(R.id.free_course_summary);
@@ -66,6 +68,7 @@ public class FreeCourseDetailActivity extends AppCompatActivity {
             subTitleView.setVisibility(View.GONE);
         }
 
+        idView.setText("( Course id : " + currentCourse.getKey() + " )");
 
         durationView.setText("Duration\nApprox. " + currentCourse.getExpectedDuration() + " " + currentCourse.getExpectedDurationUnit());
         levelView.setText(currentCourse.getLevel());

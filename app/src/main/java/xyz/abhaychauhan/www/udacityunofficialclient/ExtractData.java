@@ -32,8 +32,27 @@ public class ExtractData {
         } catch (IOException e) {
             Log.e("ExtractData.java", "Error -> Not able to fetch JSON RESPONSE !!!");
         }
+
         ArrayList<Course> courses = extractCourseData(jsonResponse, courseType);
         return courses;
+    }
+
+    /**
+     * Function takes UDACITY API URL (String) and return List of tracks
+     *
+     * @param stringUrl
+     * @return
+     */
+    public static ArrayList<Track> extractTracks(String stringUrl) {
+        URL url = createUrl(stringUrl);
+        String jsonResponse = "";
+        try {
+            jsonResponse = makeHttpRequest(url);
+        } catch (IOException e) {
+            Log.e("ExtractData.java", "Error -> Not able to fetch JSON RESPONSE !!!");
+        }
+        ArrayList<Track> tracks = extractTrackData(jsonResponse);
+        return tracks;
     }
 
     /**
@@ -150,5 +169,35 @@ public class ExtractData {
             Log.e("ExtractData.java", "Error -> JSONException error !!!");
         }
         return course;
+    }
+
+    /**
+     * Function return array list of Tracks.
+     *
+     * @param jsonResponse
+     * @return
+     */
+    public static ArrayList<Track> extractTrackData(String jsonResponse) {
+        ArrayList<Track> tracks = new ArrayList<>();
+        try {
+            JSONObject object = new JSONObject(jsonResponse);
+            JSONArray tracksArray = object.getJSONArray("tracks");
+            for (int i = 0; i < tracksArray.length(); i++) {
+                JSONObject tracksObject = tracksArray.optJSONObject(i);
+                JSONArray tracksCoursesArray = tracksObject.optJSONArray("courses");
+                ArrayList<String> tracksCourses = new ArrayList<>();
+                for (int j = 0; j < tracksCoursesArray.length(); j++) {
+                    tracksCourses.add(tracksCoursesArray.optString(j));
+                }
+                String[] courses = new String[tracksCourses.size()];
+                courses = tracksCourses.toArray(courses);
+                String name = tracksObject.optString("name");
+                String description = tracksObject.optString("description");
+                tracks.add(new Track(courses, name, description));
+            }
+        } catch (JSONException e) {
+            Log.e("ExtractData.java", "Error -> Track JSONException error !!!");
+        }
+        return tracks;
     }
 }

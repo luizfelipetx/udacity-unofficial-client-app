@@ -18,6 +18,7 @@ public class NanodegreeDetailActivity extends AppCompatActivity {
     ImageView courseImageView;
     TextView titleView;
     TextView subTitleView;
+    TextView idView;
     TextView durationView;
     TextView levelView;
     TextView summaryView;
@@ -37,6 +38,7 @@ public class NanodegreeDetailActivity extends AppCompatActivity {
         courseImageView = (ImageView) findViewById(R.id.nanodegree_image);
         titleView = (TextView) findViewById(R.id.nanodegree_title);
         subTitleView = (TextView) findViewById(R.id.nanodegree_subtitle);
+        idView = (TextView) findViewById(R.id.nanodegree_id);
         durationView = (TextView) findViewById(R.id.nanodegree_duration);
         levelView = (TextView) findViewById(R.id.nanodegree_level);
         summaryView = (TextView) findViewById(R.id.nanodegree_summary);
@@ -44,13 +46,11 @@ public class NanodegreeDetailActivity extends AppCompatActivity {
         syllabusView = (TextView) findViewById(R.id.nanodegree_syllabus);
         buttonView = (Button) findViewById(R.id.button_view_course);
 
-        if (currentCourse.getImageUrl() != null && currentCourse.getImageUrl() != "" && !currentCourse.getImageUrl().contains(" ") ) {
-            try{
+        if (currentCourse.getImageUrl() != null && currentCourse.getImageUrl() != "" && !currentCourse.getImageUrl().contains(" ")) {
+            try {
                 Picasso.with(this).load(currentCourse.getImageUrl()).into(courseImageView);
                 courseImageView.setVisibility(View.VISIBLE);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 courseImageView.setVisibility(View.GONE);
             }
         } else {
@@ -65,6 +65,7 @@ public class NanodegreeDetailActivity extends AppCompatActivity {
             subTitleView.setVisibility(View.GONE);
         }
 
+        idView.setText("( Course Id : " + currentCourse.getKey() + " )");
 
         durationView.setText("Duration\nApprox. " + currentCourse.getExpectedDuration() + " " + currentCourse.getExpectedDurationUnit());
         levelView.setText(currentCourse.getLevel());

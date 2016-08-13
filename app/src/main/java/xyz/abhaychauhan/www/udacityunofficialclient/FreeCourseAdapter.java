@@ -53,6 +53,10 @@ public class FreeCourseAdapter extends ArrayAdapter<Course> {
         TextView titleView = (TextView) convertView.findViewById(R.id.free_course_title);
         titleView.setText(currentCourse.getTitle());
 
+        //Course ID
+        TextView idView = (TextView) convertView.findViewById(R.id.free_course_id);
+        idView.setText("( Course id : " + currentCourse.getKey() + " )");
+
         //Short summary
         TextView shortSummaryView = (TextView) convertView.findViewById(R.id.free_course_short_summary);
         shortSummaryView.setText(currentCourse.getShortSummary());
@@ -67,6 +71,7 @@ public class FreeCourseAdapter extends ArrayAdapter<Course> {
 
         GradientDrawable drawable = (GradientDrawable) levelView.getBackground();
         drawable.setColor(getLevelColor(currentCourse.getLevel()));
+
 
         return convertView;
     }

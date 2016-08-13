@@ -22,4 +22,7 @@
     <string name="button_view_course">View Course</string>
     <string name="course_details">Course Details</string>
 
+    <string name="track_name">Data Science</string>
+    <string name="track_no_of_courses">Courses : 15</string>
+
 </resources>

@@ -22,4 +22,7 @@
 
     <dimen name="course_image_height">200dp</dimen>
     <dimen name="list_item_margin_tb">10dp</dimen>
+
+    <dimen name="track_name_size">20sp</dimen>
+    <dimen name="track_description_size">14sp</dimen>
 </resources>
