@@ -1,3 +1,6 @@
+#Udacity Client
+Udacity client is an unofficial android of Udacity.
+
 ![Udacity Main Screen](http://projects.abhaychauhan.xyz/android/udacity/1.png)
 ![Nanodegree Activity Screen](http://projects.abhaychauhan.xyz/android/udacity/2.png)
 ![Free course Catalog](http://projects.abhaychauhan.xyz/android/udacity/3.png)
